@@ -1,0 +1,27 @@
+.form {
+  border: 1px solid var(--lt-color-gray-300);
+
+  @media screen and (min-width: 769px) {
+    width: 542px;
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    height: 47px;
+
+    &_input {
+      padding: 16px 0 16px 16px;
+      width: 100%;
+      text-overflow: ellipsis;
+    }
+
+    &_icon {
+      padding: 0 8px;
+
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+  }
+}

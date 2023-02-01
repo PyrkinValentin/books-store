@@ -1,0 +1,14 @@
+@import "SpinnerKeyFrames.module";
+
+.container {
+  display: flex;
+  align-items: center;
+
+  svg {
+    animation: rotate 2s linear infinite;
+  }
+
+  circle {
+    animation: dash 1.5s ease-in-out infinite;
+  }
+}

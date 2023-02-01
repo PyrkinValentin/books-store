@@ -1,0 +1,23 @@
+.nav__items {
+  display: flex;
+  align-items: center;
+  column-gap: 42px;
+
+  &_link {
+    position: relative;
+
+    &_counter {
+      position: absolute;
+      top: -6px;
+      right: -2px;
+
+      display: block;
+      width: 10px;
+      height: 10px;
+
+      border-radius: 10px;
+      border: 2px solid var(--lt-color-white);
+      background-color: var(--lt-color-red-300);
+    }
+  }
+}

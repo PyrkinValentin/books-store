@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background-color: var(--lt-color-gray-200);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--lt-color-gray-500);
+  border-radius: 8px;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Exo 2', BlinkMacSystemFont, Helvetica,Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+input {
+  font-family: inherit;
+  font-size: 100%;
+
+  border: inherit;
+  border-radius: inherit;
+  background-color: inherit;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+button {
+  margin: 0;
+  padding: 0;
+
+  width: auto;
+  overflow: visible;
+
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  color: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  text-transform: inherit;
+
+  line-height: normal;
+
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  -webkit-appearance: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

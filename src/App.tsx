@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {RouterProvider} from "react-router-dom"
+import router from "./router/rootRouter"
+
+import {Provider} from "react-redux"
+import {store} from "./store/store"
+
+import "./styles/reset.scss"
+import "./styles/global.scss"
+
+import Layout from "./components/layout/Layout"
+import Spinner from "./ui/spinner/Spinner"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Layout>
+      <Provider store={store}>
+        <RouterProvider
+          router={router}
+          fallbackElement={<Spinner className={'spinner'}/>}
+        />
+      </Provider>
+    </Layout>
+  )
 }
 
-export default App;
+export default App

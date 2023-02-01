@@ -1,0 +1,13 @@
+.button {
+  padding: 18px;
+  width: 100%;
+
+  &__black {
+    color: var(--lt-color-white);
+    background-color: var(--lt-color-gray-700);
+  }
+
+  &__white {
+    background-color: var(--lt-color-gray-200);
+  }
+}

@@ -1,0 +1,47 @@
+.container {
+  position: absolute;
+  margin-top: 8px;
+  left: 0;
+  right: 0;
+
+  max-height: 557px;
+  background-color: var(--lt-color-gray-100);
+  border: 1px solid var(--lt-color-gray-300);
+  overflow: auto;
+}
+
+.items {
+  &__link {
+    padding: 20px;
+    border-bottom: 1px solid var(--lt-color-gray-300);
+
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+
+    text-transform: none;
+
+    img {
+      flex-shrink: 0;
+
+      width: 80px;
+      height: 60px;
+
+      object-fit: cover;
+    }
+  }
+}
+
+.spinner {
+  margin: 32px auto;
+
+  width: 48px;
+  height: 48px;
+}
+
+.results__btn {
+  position: sticky;
+  bottom: 0;
+
+  display: block;
+}
