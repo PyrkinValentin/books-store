@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react"
 import initViewport from "../helpers/initViewport"
-import {IViewport} from "../types/viewport"
+import {IViewport} from "../types/viewportTypes"
 
 const useViewport = (): IViewport => {
 	const [viewport, setViewport] = useState(initViewport)

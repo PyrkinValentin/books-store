@@ -1,0 +1,15 @@
+.container {
+  margin: 72px 0;
+  padding-top: 48px;
+
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  justify-content: space-between;
+
+  border-top: 1px solid var(--lt-color-gray-300);
+
+  @media screen and (max-width: 561px) {
+    flex-wrap: wrap;
+  }
+}

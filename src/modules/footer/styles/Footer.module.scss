@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  color: var(--lt-color-gray-500);
+  text-transform: none;
+  border-top: 1px solid var(--lt-color-gray-300);
+
+  @media screen and (min-width: 1120px) {
+    padding: 48px 0;
+  }
+
+  @media screen and (max-width: 1119px) {
+    padding: 48px;
+  }
+}

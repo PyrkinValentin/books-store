@@ -1,7 +1,7 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit"
 
-import searchReducer from "../modules/header/features/searchSlice"
-import searchApi from "../modules/header/services/searchApi"
+import searchReducer from "./slices/searchSlice"
+import searchApi from "../services/searchApi"
 
 const rootReducer = combineReducers({
 	searchReducer,

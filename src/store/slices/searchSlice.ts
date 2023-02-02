@@ -1,11 +1,9 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit"
-
-interface ISearchSliceInitialState {
-	input: string
-}
+import {ISearchSliceInitialState} from "./types/searchSliceTypes";
 
 const initialState: ISearchSliceInitialState = {
 	input: '',
+	isShowResults: false,
 }
 
 const searchSlice = createSlice({
@@ -14,9 +12,12 @@ const searchSlice = createSlice({
 	reducers: {
 		setInput: (state: ISearchSliceInitialState, action: PayloadAction<string>) => {
 			state.input = action.payload
+		},
+		setShowResults: (state: ISearchSliceInitialState, action: PayloadAction<boolean>) => {
+			state.isShowResults = action.payload
 		}
 	},
 })
 
 export default searchSlice.reducer
-export const {setInput} = searchSlice.actions
+export const {setInput, setShowResults} = searchSlice.actions

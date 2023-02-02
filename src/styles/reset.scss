@@ -41,6 +41,9 @@ input {
   border-radius: inherit;
   background-color: inherit;
 
+  height: inherit;
+  width: 100%;
+
   &:focus {
     outline: none;
   }

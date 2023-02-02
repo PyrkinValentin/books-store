@@ -1,4 +1,4 @@
-import {IViewport} from "../types/viewport"
+import {IViewport} from "../types/viewportTypes"
 
 const initViewport = (): IViewport => ({
 	mobile: matchMedia('(max-width: 468px)').matches,

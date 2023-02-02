@@ -4,30 +4,30 @@ import Home from "../pages/Home"
 import Search from "../pages/Search"
 import NotFound from "../pages/NotFound"
 
+import homeLoader from "./loaders/homeLoader"
+import searchLoader from "./loaders/searchLoader"
+import notFoundLoader from "./loaders/notFoundLoader"
+
 const router = createBrowserRouter([
 	{
 		path: '/',
 		element: <Home/>,
-		loader: () => {
-			document.title = 'Home'
-			return null
-		},
+		loader: homeLoader,
 	},
 	{
-		path: '/search/:searchItem',
+		path: '/search/:value',
 		element: <Search/>,
-		loader: ({request}) => {
-			document.title = 'Search'
-			return null
-		},
+		loader: searchLoader,
+	},
+	{
+		path: '/search/:value/:page',
+		element: <Search/>,
+		loader: searchLoader,
 	},
 	{
 		path: '*',
 		element: <NotFound/>,
-		loader: () => {
-			document.title = '404 not found'
-			return null
-		},
+		loader: notFoundLoader,
 	},
 ])
 

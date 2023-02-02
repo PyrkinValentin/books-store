@@ -1,7 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-import App from './App'
+import ErrorBoundary from "./components/errorBoundary/ErrorBoundary"
+
+import {Provider} from "react-redux"
+import {store} from "./store/store"
+
+import {RouterProvider} from "react-router-dom"
+import router from "./router/rootRouter"
+
+import "./styles/reset.scss"
+import "./styles/global.scss"
+
+import Layout from "./components/layout/Layout"
+import Spinner from "./ui/spinner/Spinner"
+
 import reportWebVitals from './reportWebVitals'
 
 const root = ReactDOM.createRoot(
@@ -10,7 +23,16 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <App />
+    <ErrorBoundary>
+      <Provider store={store}>
+        <Layout>
+          <RouterProvider
+            router={router}
+            fallbackElement={<Spinner className={'spinner'}/>}
+          />
+        </Layout>
+      </Provider>
+    </ErrorBoundary>
   </React.StrictMode>
 )
 

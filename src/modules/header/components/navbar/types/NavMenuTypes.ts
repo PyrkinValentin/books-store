@@ -1,4 +1,4 @@
-import {IViewport} from "../../../../../types/viewport"
+import {IViewport} from "../../../../../types/viewportTypes"
 
 type NavMenuProps = {
 	onChangeShow: () => void

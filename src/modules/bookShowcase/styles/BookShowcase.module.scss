@@ -1,0 +1,38 @@
+.container {
+  @media screen and (min-width: 1120px) {
+    margin: 52px 0;
+  }
+
+  @media screen and (max-width: 1119px) {
+    margin: 42px 24px;
+  }
+}
+
+.spinner {
+  margin: 120px auto;
+
+  width: 48px;
+  height: 48px;
+}
+
+.total__results {
+  margin-top: 16px;
+  color: var(--lt-color-gray-500);
+  text-transform: none;
+}
+
+.books__layout {
+  margin-top: 42px;
+
+  display: grid;
+  column-gap: 32px;
+  row-gap: 56px;
+
+  @media screen and (min-width: 769px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media screen and (min-width: 469px) and (max-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
