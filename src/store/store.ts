@@ -2,13 +2,13 @@ import {combineReducers, configureStore} from "@reduxjs/toolkit"
 
 import persistReducer from "redux-persist/es/persistReducer"
 import persistStore from "redux-persist/es/persistStore"
+import persistConfig from "./persist/persistConfig"
 import {FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER} from "redux-persist/es/constants"
 
 import searchReducer from "./slices/searchSlice"
 import favoritesReducer from "./slices/favoritesSlice"
 
 import searchApi from "../services/searchApi"
-import persistConfig from "./persist/persistConfig"
 
 const rootReducer = combineReducers({
 	searchReducer,

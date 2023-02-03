@@ -1,0 +1,20 @@
+.container {
+  margin-top: 16px;
+  text-transform: none;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+
+  font-weight: 600;
+  line-height: 24px;
+
+  cursor: pointer;
+  user-select: none;
+}
+
+.details {
+  margin-top: 16px;
+}

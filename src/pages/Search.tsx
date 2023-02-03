@@ -1,3 +1,5 @@
+import {ScrollRestoration} from "react-router-dom"
+
 import Layout from "../components/layout/Layout"
 import Header from "../modules/header/Header"
 import LayoutSection from "../components/layoutSection/LayoutSection"
@@ -8,6 +10,7 @@ import Footer from "../modules/footer/Footer"
 const Search = () => {
 	return (
 		<Layout>
+			<ScrollRestoration/>
 			<Header/>
 			<LayoutSection>
 				<BookShowcase/>

@@ -1,5 +1,4 @@
 import {FC} from "react"
-import {ScrollRestoration} from "react-router-dom"
 
 import PrevPagination from "./components/prevPagination/PrevPagination"
 import ListPagination from "./components/listPagination/ListPagination"
@@ -15,7 +14,6 @@ const Pagination: FC<PaginationProps> = ({currentPage, totalPage}) => {
 
 	return (
 		<nav className={styles.container}>
-			<ScrollRestoration/>
 			<PrevPagination
 				currentPage={currentPage}
 			/>

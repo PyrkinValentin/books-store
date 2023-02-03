@@ -87,3 +87,7 @@ hr {
   height: 1px;
   background-color: var(--lt-color-gray-300);
 }
+
+details, summary {
+  all: unset;
+}

@@ -1,0 +1,29 @@
+.spinner {
+  margin: 120px auto;
+
+  width: 48px;
+  height: 48px;
+}
+
+.title {
+  margin: 49px 0;
+}
+
+.books {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 32px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+}
+

@@ -1,4 +1,5 @@
 import {useParams} from "react-router-dom"
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 
 import {useGetBookQuery} from "../../services/searchApi"
 import useHead from "../../hooks/useHead"
@@ -8,11 +9,12 @@ import Spinner from "../../ui/spinner/Spinner"
 import Title from "../../ui/title/Title"
 import Poster from "../../components/poster/Poster"
 import FavoriteAction from "../favoriteAction/FavoriteAction"
-import BookDescription from "./components/BookDescription"
+import BookDescription from "./components/bookDescription/BookDescription"
+import PaperSwitch from "../../ui/paperSwitch/PaperSwitch"
 import Button from "../../ui/button/Button"
+import SocialButtons from "../../components/socialButtons/SocialButtons"
 
 import {BookAboutParams} from "./types/BookAboutTypes"
-
 import styles from "./styles/BookAbout.module.scss"
 
 const BookAbout = () => {
@@ -24,7 +26,9 @@ const BookAbout = () => {
 	})
 
 	if (isFetching) {
-		return <Spinner className={styles.spinner}/>
+		return (
+			<Spinner className={styles.spinner}/>
+		)
 	}
 
 	if (!data?.isbn13) {
@@ -66,8 +70,13 @@ const BookAbout = () => {
 						rating={data.rating}
 						authors={data.authors}
 						publisher={data.publisher}
+						year={data.year}
 						language={data.language}
 					/>
+
+					<PaperSwitch label={'More details'}>
+						{data.subtitle}
+					</PaperSwitch>
 
 					<Button className={styles.btn__add_card}>
 						Add to card
@@ -81,6 +90,25 @@ const BookAbout = () => {
 					</Button>
 				</div>
 			</div>
+
+			<Tabs
+				className={styles.tabs}
+				selectedTabClassName={styles.tabs__active}
+				selectedTabPanelClassName={styles.tabs__panel}
+				focusTabOnClick={false}
+			>
+				<TabList className={styles.tabs__list}>
+					<Tab>Description</Tab>
+					<Tab>Authors</Tab>
+					<Tab>Reviews</Tab>
+				</TabList>
+
+				<TabPanel>{data.desc}</TabPanel>
+				<TabPanel>{data.authors}</TabPanel>
+				<TabPanel>No reviews</TabPanel>
+			</Tabs>
+
+			<SocialButtons/>
 		</>
 	)
 }

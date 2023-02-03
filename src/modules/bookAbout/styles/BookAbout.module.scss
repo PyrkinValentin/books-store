@@ -26,6 +26,10 @@
 
 .info {
   width: 100%;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 48px;
+  }
 }
 
 .btn__add_card {
@@ -36,5 +40,45 @@
   margin-top: 40px;
   color: var(--lt-color-gray-500);
   text-transform: none;
+}
+
+.tabs {
+  text-transform: none;
+
+  &__active {
+    color: var(--lt-color-gray-700) !important;
+
+    @media screen and (min-width: 469px) {
+      border-bottom: 1px solid var(--lt-color-gray-700);
+    }
+
+    @media screen and (max-width: 468px) {
+      background-color: var(--lt-color-gray-200);
+    }
+  }
+
+  &__list {
+    border-bottom: 1px solid var(--lt-color-gray-300);
+
+    @media screen and (min-width: 469px) {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+    }
+
+    li {
+      padding: 32px;
+
+      font-weight: 600;
+      color: var(--lt-color-gray-500);
+
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+
+  &__panel {
+    margin-top: 32px;
+  }
 }
 

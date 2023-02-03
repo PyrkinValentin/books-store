@@ -3,6 +3,7 @@ type BookDescriptionProps = {
 	rating: string
 	authors: string
 	publisher: string
+	year: string
 	language: string
 }
 
