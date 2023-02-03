@@ -5,6 +5,7 @@ import Header from "../modules/header/Header"
 import LayoutSection from "../components/layoutSection/LayoutSection"
 import GoBack from "../components/goBack/GoBack"
 import BookAbout from "../modules/bookAbout/BookAbout"
+import SocialButtons from "../components/socialButtons/SocialButtons"
 import SubscribeNewsLetter from "../modules/subscribeNewsLetter/SubscribeNewsLetter"
 import BooksSimilar from "../modules/bookAbout/components/booksSimilar/BooksSimilar"
 import Footer from "../modules/footer/Footer"
@@ -17,6 +18,7 @@ const Book = () => {
 			<LayoutSection>
 				<GoBack/>
 				<BookAbout/>
+				<SocialButtons/>
 				<SubscribeNewsLetter/>
 				<BooksSimilar/>
 			</LayoutSection>

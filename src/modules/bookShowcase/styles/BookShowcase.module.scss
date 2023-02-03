@@ -13,16 +13,4 @@
 
 .books__layout {
   margin-top: 42px;
-
-  display: grid;
-  column-gap: 32px;
-  row-gap: 56px;
-
-  @media screen and (min-width: 769px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  @media screen and (min-width: 469px) and (max-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }

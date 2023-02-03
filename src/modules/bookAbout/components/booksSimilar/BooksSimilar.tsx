@@ -10,6 +10,7 @@ import Icon from "../../../../ui/icon/Icon"
 import {BookAboutParams} from "../../types/BookAboutTypes"
 import styles from "./styles/BooksSimilar.module.scss"
 import {useState} from "react"
+import LayoutGrid from "../../../../components/layoutGrid/LayoutGrid";
 
 
 const BooksSimilar = () => {
@@ -20,7 +21,7 @@ const BooksSimilar = () => {
 
 	const {isFetching: isFetchingSimilar, data: dataSimilar} = useSearchBooksQuery(
 		{value: data ? data.title : ''},
-		{skip: isFetching || !data?.isbn13}
+		{skip: isFetching || !data}
 	)
 
 	const handlePrevPage = () => {
@@ -86,16 +87,15 @@ const BooksSimilar = () => {
 				</div>
 			</div>
 
-			<div className={styles.books}>
+			<LayoutGrid className={styles.books}>
 				{similarSuggestions.map((book) =>
-					<Link
-						key={book.isbn13}
-						to={`/book/${book.isbn13}`}
-					>
-						<BookCard book={book}/>
-					</Link>
+					<li key={book.isbn13}>
+						<Link to={`/book/${book.isbn13}`}>
+							<BookCard book={book}/>
+						</Link>
+					</li>
 				)}
-			</div>
+			</LayoutGrid>
 		</>
 	)
 }

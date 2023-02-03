@@ -5,6 +5,7 @@ import useFetchingBookShowcase from "./hooks/useFetchingBookShowcase"
 import Title from "../../ui/title/Title"
 import Warning from "../../components/warning/Warning"
 import Spinner from "../../ui/spinner/Spinner"
+import LayoutGrid from "../../components/layoutGrid/LayoutGrid"
 import BookCard from "../../components/bookCard/BookCard"
 import Pagination from "../../components/pagination/Pagination"
 
@@ -33,7 +34,7 @@ const BookShowcase = () => {
 
 			{!data.isFetching && Boolean(data.books.length) &&
 				<>
-					<ul className={styles.books__layout}>
+					<LayoutGrid className={styles.books__layout}>
 						{data.books.map((book) =>
 							<li key={book.isbn13}>
 								<Link to={`/book/${book.isbn13}`}>
@@ -41,7 +42,7 @@ const BookShowcase = () => {
 								</Link>
 							</li>
 						)}
-					</ul>
+					</LayoutGrid>
 
 					{data.isSearchPage && Boolean(data.totalPages) &&
 						<Pagination

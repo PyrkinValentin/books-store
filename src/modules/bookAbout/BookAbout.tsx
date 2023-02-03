@@ -12,7 +12,6 @@ import FavoriteAction from "../favoriteAction/FavoriteAction"
 import BookDescription from "./components/bookDescription/BookDescription"
 import PaperSwitch from "../../ui/paperSwitch/PaperSwitch"
 import Button from "../../ui/button/Button"
-import SocialButtons from "../../components/socialButtons/SocialButtons"
 
 import {BookAboutParams} from "./types/BookAboutTypes"
 import styles from "./styles/BookAbout.module.scss"
@@ -42,7 +41,7 @@ const BookAbout = () => {
 
 	return (
 		<>
-			<Title title={data.title}/>
+			<Title title={data.title} className={styles.title}/>
 
 			<div className={styles.group}>
 				<div className={styles.wrapper}>
@@ -107,8 +106,6 @@ const BookAbout = () => {
 				<TabPanel>{data.authors}</TabPanel>
 				<TabPanel>No reviews</TabPanel>
 			</Tabs>
-
-			<SocialButtons/>
 		</>
 	)
 }
