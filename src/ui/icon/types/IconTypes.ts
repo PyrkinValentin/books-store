@@ -4,6 +4,8 @@ type IconProps = {
 	name: string
 	width?: number
 	height?: number
+	strokeWidth?: number
+	className?: string
 }
 
 interface ICollectionIcons {

@@ -81,3 +81,9 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: var(--lt-color-gray-300);
+}

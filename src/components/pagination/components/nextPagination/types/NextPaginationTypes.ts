@@ -1,6 +1,6 @@
 type NextPaginationProps = {
-	nextPage: number
-	totalPage: number
+	currentPage: number
+	lastPage: number
 }
 
 export type {

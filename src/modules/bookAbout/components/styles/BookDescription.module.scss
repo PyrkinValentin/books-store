@@ -1,0 +1,30 @@
+.info__item {
+  margin: 16px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  text-transform: none;
+
+  &_gap {
+    margin: 40px 0;
+  }
+
+  &__price {
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 60px;
+  }
+
+  &__left {
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: var(--lt-color-gray-500);
+  }
+
+  &__right {
+    font-weight: 600;
+    font-size: 1.6rem;
+  }
+}

@@ -1,18 +1,25 @@
+import {FC} from "react"
 import {Link} from "react-router-dom"
 
+import useAppSelector from "../../../../hooks/useAppSelector"
 import Icon from "../../../../ui/icon/Icon"
 
 import {NavItemsProps} from "./types/NavItemsTypes"
 import styles from "./styles/NavItems.module.scss"
 
-const NavItems = ({show, onChangeShow, viewport}: NavItemsProps) => {
+const NavItems: FC<NavItemsProps> = ({show, onChangeShow, viewport}) => {
+	const favorites = useAppSelector((state) => state.favoritesReducer.favorites)
+
 	return (
 		<ul className={styles.nav__items}>
 			{viewport.laptop &&
 				<li>
 					<Link to={'/favorites'} className={styles.nav__items_link}>
 						<Icon name={'heart'}/>
-						<span className={styles.nav__items_link_counter}></span>
+
+						{Boolean(favorites.length) &&
+							<span className={styles.nav__items_link_counter}></span>
+						}
 					</Link>
 				</li>
 			}

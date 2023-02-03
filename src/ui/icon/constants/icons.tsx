@@ -10,6 +10,7 @@ const icons: ICollectionIcons = {
 	burger: <><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 6l16 0"></path><path d="M4 12l16 0"></path><path d="M4 18l16 0"></path></>,
 	'arrow-left': <><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M5 12l14 0"></path><path d="M5 12l4 4"></path><path d="M5 12l4 -4"></path></>,
 	'arrow-right': <><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M5 12l14 0"></path><path d="M15 16l4 -4"></path><path d="M15 8l4 4"></path></>,
+	'search-off': <><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M5.039 5.062a7 7 0 0 0 9.91 9.89m1.584 -2.434a7 7 0 0 0 -9.038 -9.057"></path><path d="M3 3l18 18"></path></>,
 }
 
 export default icons

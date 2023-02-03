@@ -1,17 +1,17 @@
 import {IBook} from "../../types/bookTypes"
 
-interface IBooksApiResponse {
+interface ISearchBooksApiResponse {
 	total: string
 	page: string
 	books: IBook[]
 }
 
-interface IBooksQueryParamsApi {
+interface ISearchBooksQueryParamsApi {
 	value: string
 	page?: string
 }
 
 export type {
-	IBooksApiResponse,
-	IBooksQueryParamsApi,
+	ISearchBooksApiResponse,
+	ISearchBooksQueryParamsApi,
 }

@@ -1,4 +1,4 @@
-import {Link, useHref} from "react-router-dom"
+import {Link} from "react-router-dom"
 
 import useAppSelector from "../../../../hooks/useAppSelector"
 import useViewport from "../../../../hooks/useViewport"
@@ -13,7 +13,6 @@ import SearchItems from "./SearchItems"
 import styles from "./styles/SearchResults.module.scss"
 
 const SearchResults = () => {
-	const pathname = useHref('')
 	const {laptop} = useViewport()
 
 	const {input, isShowResults} = useAppSelector((state) => state.searchReducer)
@@ -24,7 +23,7 @@ const SearchResults = () => {
 		{skip: debouncedValue.length < 3},
 	)
 
-	const isSearchPageAndViewportLaptop = pathname.startsWith('/search') && laptop
+	const isSearchPageAndViewportLaptop = document.location.pathname.startsWith('/search') && laptop
 
 	if (!isShowResults || !data || isSearchPageAndViewportLaptop) {
 		return <></>

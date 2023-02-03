@@ -1,14 +1,20 @@
+import {FC} from "react"
+
+import Poster from "../poster/Poster"
+
+import checkPriceFree from "../../helpers/checkPriceFree"
 import {BookCardProps} from "./types/BookCardTypes"
+
 import styles from "./styles/BookCard.module.scss"
 
-const BookCard = ({book}: BookCardProps) => {
-	const isPriceFree = book.price.includes('0.00')
+const BookCard: FC<BookCardProps> = ({book}) => {
+	const isPriceFree = checkPriceFree(book.price)
 
 	return (
 		<div className={styles.card}>
 			<div>
-				<img
-					src={book.image}
+				<Poster
+					image={book.image}
 					alt={book.title}
 					className={styles.card__poster}
 				/>

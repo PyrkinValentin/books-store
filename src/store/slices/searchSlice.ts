@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit"
-import {ISearchSliceInitialState} from "./types/searchSliceTypes";
+import {ISearchSliceInitialState} from "./types/searchSliceTypes"
 
 const initialState: ISearchSliceInitialState = {
 	input: '',

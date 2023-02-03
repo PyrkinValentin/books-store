@@ -1,25 +1,12 @@
-import {ICreatePagination} from "./types/createPaginationTypes"
-
-const createPagination = (currentPage: number, totalPage: number): ICreatePagination => {
-	let controlPage = currentPage - 1
-
+const createPagination = (currentPage: number, totalPage: number): number[] => {
 	if (currentPage <= 1) {
-		controlPage = 1
+		return [1, 2, 3]
 	}
 
-	if (totalPage >= 3 && currentPage >= totalPage) {
-		controlPage = totalPage - 2
+	if (currentPage >= totalPage) {
+		return [totalPage - 2, totalPage - 1, totalPage]
 	}
 
-	const pages = Array.from(
-		{length: totalPage > 3 ? 3 : totalPage},
-		(_, key) => key + controlPage
-	)
-
-	return {
-		prevPage: controlPage < 1 ? 1 : controlPage,
-		nextPage: controlPage + 2 > totalPage ? totalPage : controlPage + 2,
-		pages,
-	}
+	return [currentPage - 1, currentPage, currentPage + 1]
 }
 export default createPagination

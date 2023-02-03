@@ -1,0 +1,17 @@
+.button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px 8px;
+
+  display: flex;
+  align-items: center;
+
+  color: var(--lt-color-white);
+  border-radius: 8px;
+  background-color: var(--lt-color-gray-700);
+}
+
+.action {
+  color: var(--lt-color-red-300);
+}

@@ -1,3 +1,5 @@
-const homeLoader = () => document.title = 'Home'
+import documentTitle from "../helpers/documentTitle"
+
+const homeLoader = () => documentTitle('Home')
 
 export default homeLoader

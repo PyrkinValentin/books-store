@@ -14,7 +14,7 @@ const BookShowcase = () => {
 	const data = useFetchingBookShowcase()
 
 	return (
-		<section className={styles.container}>
+		<>
 			<Title title={data.isSearchPage ? `‘${data.value}’ Search results` : 'New releases books'}/>
 
 			{data.isSearchPage && Boolean(data.totalBooks) &&
@@ -51,7 +51,7 @@ const BookShowcase = () => {
 					}
 				</>
 			}
-		</section>
+		</>
 	)
 }
 

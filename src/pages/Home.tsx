@@ -1,16 +1,20 @@
+import Layout from "../components/layout/Layout"
 import Header from "../modules/header/Header"
+import LayoutSection from "../components/layoutSection/LayoutSection"
 import BookShowcase from "../modules/bookShowcase/BookShowcase"
-import SubscribeNewsLetter from "../components/subscribeNewsLetter/SubscribeNewsLetter"
+import SubscribeNewsLetter from "../modules/subscribeNewsLetter/SubscribeNewsLetter"
 import Footer from "../modules/footer/Footer"
 
 const Home = () => {
 	return (
-		<>
+		<Layout>
 			<Header/>
-			<BookShowcase/>
-			<SubscribeNewsLetter/>
+			<LayoutSection>
+				<BookShowcase/>
+				<SubscribeNewsLetter/>
+			</LayoutSection>
 			<Footer/>
-		</>
+		</Layout>
 	)
 }
 

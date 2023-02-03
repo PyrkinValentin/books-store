@@ -1,3 +1,4 @@
+import {FC} from "react"
 import {ScrollRestoration} from "react-router-dom"
 
 import PrevPagination from "./components/prevPagination/PrevPagination"
@@ -9,25 +10,25 @@ import createPagination from "./components/listPagination/helpers/createPaginati
 import {PaginationProps} from "./types/PaginationTypes"
 import styles from "./styles/Pagination.module.scss"
 
-const Pagination = ({currentPage, totalPage}: PaginationProps) => {
-	const {prevPage, pages, nextPage} = createPagination(currentPage, totalPage)
+const Pagination: FC<PaginationProps> = ({currentPage, totalPage}) => {
+	const pages = createPagination(currentPage, totalPage)
 
 	return (
 		<nav className={styles.container}>
 			<ScrollRestoration/>
-			<PrevPagination prevPage={prevPage}/>
+			<PrevPagination
+				currentPage={currentPage}
+			/>
 
 			<ListPagination
 				currentPage={currentPage}
-				prevPage={prevPage}
 				pages={pages}
-				nextPage={nextPage}
-				totalPage={totalPage}
+				lastPage={totalPage}
 			/>
 
 			<NextPagination
-				nextPage={nextPage}
-				totalPage={totalPage}
+				currentPage={currentPage}
+				lastPage={totalPage}
 			/>
 		</nav>
 	)

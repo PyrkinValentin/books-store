@@ -5,10 +5,16 @@ import {ListPaginationProps} from "./types/ListPaginationTypes"
 
 import styles from "./styles/ListPagination.module.scss"
 
-const ListPagination = ({currentPage, prevPage, pages, nextPage, totalPage}: ListPaginationProps) => {
+const ListPagination = ({currentPage, pages, lastPage}: ListPaginationProps) => {
+	const prevPage = currentPage - 1
+	const nextPage = currentPage + 1
+
+	const isNotFirstPage = prevPage > 1
+	const isNotLastPage = nextPage < lastPage
+
 	return (
 		<ul className={styles.list}>
-			{prevPage > 1 &&
+			{isNotFirstPage &&
 				<>
 					<li>
 						<Link to={createUrlPagination(1)}>1</Link>
@@ -28,11 +34,11 @@ const ListPagination = ({currentPage, prevPage, pages, nextPage, totalPage}: Lis
 				</li>
 			))}
 
-			{nextPage < totalPage &&
+			{isNotLastPage &&
 				<>
 					<li>...</li>
 					<li>
-						<Link to={createUrlPagination(totalPage)}>{totalPage}</Link>
+						<Link to={createUrlPagination(lastPage)}>{lastPage}</Link>
 					</li>
 				</>
 			}

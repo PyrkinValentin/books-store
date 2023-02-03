@@ -1,5 +1,5 @@
 type PrevPaginationProps = {
-	prevPage: number
+	currentPage: number
 }
 
 export type {

@@ -6,11 +6,14 @@ import {NextPaginationProps} from "./types/NextPaginationTypes"
 
 import styles from "./styles/NextPagination.module.scss"
 
-const NextPagination = ({nextPage, totalPage}: NextPaginationProps) => {
+const NextPagination = ({currentPage, lastPage}: NextPaginationProps) => {
+	const nextPage = currentPage + 1
+	const isLastPage = nextPage > lastPage
+
 	return (
 		<Link
 			to={createUrlPagination(nextPage)}
-			className={classNames(styles.link, nextPage === totalPage ? styles.link_disabled : undefined)}
+			className={classNames(styles.link, isLastPage ? styles.link_disabled : undefined)}
 		>
 			Next
 			<Icon name={'arrow-right'}/>

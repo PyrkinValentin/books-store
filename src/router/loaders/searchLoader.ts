@@ -1,8 +1,6 @@
-import {ISearchLoader} from "../types/searchLoaderType"
+import documentTitle from "../helpers/documentTitle"
+import {ILoader} from "../types/loaderTypes"
 
-const searchLoader = ({request}: ISearchLoader) => {
-	document.title = 'Search'
-	return null
-}
+const searchLoader = ({request}: ILoader) => documentTitle('Search')
 
 export default searchLoader
