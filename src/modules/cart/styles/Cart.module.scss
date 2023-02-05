@@ -86,36 +86,3 @@
     right: 0;
   }
 }
-
-.check {
-  margin-left: auto;
-  width: 300px;
-
-  text-transform: none;
-
-  &__list {
-    margin-bottom: 24px;
-
-    display: flex;
-    flex-direction: column;
-    row-gap: 24px;
-
-    &__calc {
-      display: flex;
-      justify-content: space-between;
-
-      h3 {
-        font-weight: 400;
-        color: var(--lt-color-gray-500);
-      }
-    }
-
-    &__total {
-      display: flex;
-      justify-content: space-between;
-
-      font-size: 3rem;
-      font-weight: 600;
-    }
-  }
-}

@@ -1,20 +1,16 @@
-import useAppDispatch from "../../hooks/useAppDispatch"
 import useAppSelector from "../../hooks/useAppSelector"
 
 import Warning from "../../components/warning/Warning"
 import Poster from "../../components/poster/Poster"
 import CartCounter from "./components/cartCounter/CartCounter"
 import CartRemove from "./components/cartRemove/CartRemove"
-import Button from "../../ui/button/Button"
+import CartCheckout from "./components/cartCheckout/CartCheckout"
 
-import {removeCart} from "../../store/slices/cartSlice"
 import checkPriceFree from "../../helpers/checkPriceFree"
-import checkCalculation from "./helpers/checkCalculation"
 
 import styles from "./styles/Cart.module.scss"
 
 const Cart = () => {
-	const dispatch = useAppDispatch()
 	const cart = useAppSelector((state) => state.cartReducer.cart)
 
 	if (!cart.length) {
@@ -22,14 +18,6 @@ const Cart = () => {
 			<Warning text={'No books in your cart'}/>
 		)
 	}
-
-	const handlePurchase = () => {
-		dispatch(
-			removeCart()
-		)
-	}
-
-	const {sum, vat, total} = checkCalculation(cart)
 
 	return (
 		<>
@@ -76,26 +64,7 @@ const Cart = () => {
 				})}
 			</ul>
 
-			<div className={styles.check}>
-				<ul className={styles.check__list}>
-					<li className={styles.check__list__calc}>
-						<h3>Sum total</h3>
-						<p>$ {sum}</p>
-					</li>
-
-					<li className={styles.check__list__calc}>
-						<h3>VAT</h3>
-						<p>$ {vat}</p>
-					</li>
-
-					<li className={styles.check__list__total}>
-						<h3>Total:</h3>
-						<p>$ {total}</p>
-					</li>
-				</ul>
-
-				<Button onClick={handlePurchase}>CHECK OUT</Button>
-			</div>
+			<CartCheckout cart={cart}/>
 		</>
 	)
 }
