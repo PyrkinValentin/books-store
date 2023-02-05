@@ -10,9 +10,14 @@ import styles from "./styles/NavMenu.module.scss"
 
 const NavMenu = ({viewport, onChangeShow}: NavMenuProps) => {
 	const favorites = useAppSelector((state) => state.favoritesReducer.favorites)
+	const cart = useAppSelector((state) => state.cartReducer.cart)
 
 	const countFavorites = Boolean(favorites.length)
 		? favorites.length
+		: null
+
+	const countCart = Boolean(cart.length)
+		? cart.length
 		: null
 
 	return (
@@ -36,7 +41,7 @@ const NavMenu = ({viewport, onChangeShow}: NavMenuProps) => {
 
 					<li>
 						<Link to={'/card'} className={styles.menu__link}>
-							Card
+							Card <span className={styles.counter}>{countCart}</span>
 						</Link>
 					</li>
 

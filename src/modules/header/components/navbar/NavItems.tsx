@@ -9,6 +9,7 @@ import styles from "./styles/NavItems.module.scss"
 
 const NavItems: FC<NavItemsProps> = ({show, onChangeShow, viewport}) => {
 	const favorites = useAppSelector((state) => state.favoritesReducer.favorites)
+	const cart = useAppSelector((state) => state.cartReducer.cart)
 
 	return (
 		<ul className={styles.nav__items}>
@@ -25,9 +26,12 @@ const NavItems: FC<NavItemsProps> = ({show, onChangeShow, viewport}) => {
 			}
 
 			<li>
-				<Link to={'/card'} className={styles.nav__items_link}>
+				<Link to={'/cart'} className={styles.nav__items_link}>
 					<Icon name={'basket'}/>
-					<span className={styles.nav__items_link_counter}></span>
+
+					{Boolean(cart.length) &&
+						<span className={styles.nav__items_link_counter}></span>
+					}
 				</Link>
 			</li>
 

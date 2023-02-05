@@ -4,7 +4,7 @@ import createColor from "./helpers/createColor"
 import {ButtonProps} from "./types/ButtonTypes"
 import styles from "./styles/Button.module.scss"
 
-const Button = ({children, color = 'black', className}: ButtonProps) => {
+const Button = ({children, color = 'black', className, disabled = false, onClick}: ButtonProps) => {
 	return (
 		<button
 			className={
@@ -13,7 +13,10 @@ const Button = ({children, color = 'black', className}: ButtonProps) => {
 					createColor(color),
 					className
 				)
-		}>
+			}
+			disabled={disabled}
+			onClick={onClick}
+		>
 			{children}
 		</button>
 	)

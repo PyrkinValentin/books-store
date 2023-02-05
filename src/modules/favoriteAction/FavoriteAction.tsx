@@ -24,7 +24,7 @@ const FavoriteAction: FC<FavoriteActionProps> = (props) => {
 
 	return (
 		<button
-			className={styles.button}
+			className={props.className}
 			onClick={handleFavorites}
 		>
 			<Icon

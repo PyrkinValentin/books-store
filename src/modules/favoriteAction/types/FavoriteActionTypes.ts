@@ -5,6 +5,9 @@ type FavoriteActionProps = {
 	authors: string
 	publisher: string
 	rating: string
+	year: string
+	price: string
+	className?: string
 }
 
 export type {

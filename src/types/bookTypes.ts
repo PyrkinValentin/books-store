@@ -16,7 +16,19 @@ interface IBookDetails extends IBook {
 	year: string
 }
 
+interface IBookCart {
+	isbn13: string
+	image: string
+	title: string
+	authors: string
+	publisher: string
+	price: string
+	year: string
+	count: number
+}
+
 export type {
 	IBook,
 	IBookDetails,
+	IBookCart,
 }

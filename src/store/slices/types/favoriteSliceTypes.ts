@@ -5,6 +5,8 @@ interface IFavorite {
 	authors: string
 	publisher: string
 	rating: string
+	year: string
+	price: string
 }
 
 interface IFavoritesSliceInitialState {

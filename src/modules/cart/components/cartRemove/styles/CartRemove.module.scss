@@ -1,0 +1,21 @@
+.delete {
+  @media screen and (min-width: 469px) and (max-width: 768px) {
+    margin-top: 24px;
+  }
+
+  @media screen and (max-width: 468px) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 8px;
+
+    display: flex;
+    align-items: center;
+
+    color: var(--lt-color-gray-100);
+    line-height: 1;
+
+    border-radius: 8px;
+    background-color: var(--lt-color-gray-700);
+  }
+}

@@ -1,0 +1,13 @@
+.wrapper {
+  margin-bottom: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+}

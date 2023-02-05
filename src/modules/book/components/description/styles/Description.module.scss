@@ -1,0 +1,35 @@
+.desc__item {
+  margin: 16px 0;
+  text-transform: none;
+
+  @media screen and (min-width: 469px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: var(--lt-color-gray-500);
+  }
+
+  &__description {
+    font-weight: 600;
+    font-size: 1.6rem;
+  }
+}
+
+.desc__wrapper {
+  margin: 40px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__price {
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 60px;
+  }
+}
