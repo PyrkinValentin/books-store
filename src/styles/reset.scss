@@ -37,7 +37,7 @@ input {
   font-family: inherit;
   font-size: 100%;
 
-  border: inherit;
+  border: none;
   border-radius: inherit;
   background-color: inherit;
 
@@ -71,6 +71,11 @@ button {
   -moz-osx-font-smoothing: inherit;
 
   -webkit-appearance: none;
+}
+
+button:disabled {
+  opacity: .2;
+  cursor: no-drop;
 }
 
 ul li {

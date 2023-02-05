@@ -8,6 +8,8 @@ import {FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER} from "redux-persist/e
 import searchReducer from "./slices/searchSlice"
 import favoritesReducer from "./slices/favoritesSlice"
 import cartReducer from "./slices/cartSlice"
+import userReducer from "./slices/userSlice"
+import dbReducer from "./slices/dbSlice"
 
 import searchApi from "../services/searchApi"
 
@@ -15,6 +17,8 @@ const rootReducer = combineReducers({
 	searchReducer,
 	favoritesReducer,
 	cartReducer,
+	userReducer,
+	dbReducer,
 	[searchApi.reducerPath]: searchApi.reducer,
 })
 

@@ -1,11 +1,13 @@
 .container {
-  position: relative;
-
   @media screen and (min-width: 1120px) {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     width: 542px;
   }
 
   @media screen and (max-width: 1119px) {
+    position: relative;
     width: 100%;
   }
 }

@@ -1,14 +1,18 @@
 import {Link} from "react-router-dom"
 
+import useSession from "../../../../hooks/useSession"
 import useAppSelector from "../../../../hooks/useAppSelector"
 
 import Search from "../search/Search"
 import Button from "../../../../ui/button/Button"
 
 import {NavMenuProps} from "./types/NavMenuTypes"
+
 import styles from "./styles/NavMenu.module.scss"
 
 const NavMenu = ({viewport, onChangeShow}: NavMenuProps) => {
+	const {loggedIn, logout} = useSession()
+
 	const favorites = useAppSelector((state) => state.favoritesReducer.favorites)
 	const cart = useAppSelector((state) => state.cartReducer.cart)
 
@@ -40,23 +44,27 @@ const NavMenu = ({viewport, onChangeShow}: NavMenuProps) => {
 					</li>
 
 					<li>
-						<Link to={'/card'} className={styles.menu__link}>
-							Card <span className={styles.counter}>{countCart}</span>
+						<Link to={'/cart'} className={styles.menu__link}>
+							Cart <span className={styles.counter}>{countCart}</span>
 						</Link>
 					</li>
 
-					<li>
-						<Link to={'/account'} className={styles.menu__link}>
-							Account
-						</Link>
-					</li>
+					{loggedIn &&
+						<li>
+							<Link to={'/account'} className={styles.menu__link}>
+								Account
+							</Link>
+						</li>
+					}
 				</ul>
 
-				<Link to={'/sign-in'}>
-					<Button>
-						Sign in
-					</Button>
-				</Link>
+				{loggedIn ? (
+					<Button onClick={logout}>Log out</Button>
+				) : (
+					<Link to={'/login'}>
+						<Button>Sign in</Button>
+					</Link>
+				)}
 			</div>
 		</>
 	)

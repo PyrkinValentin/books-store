@@ -1,0 +1,27 @@
+@import "src/styles/mixins/tabs.mixin";
+
+.container {
+  max-width: 540px;
+
+  @media screen and (min-width: 1120px) {
+    margin: 108px auto;
+  }
+
+  @media screen and (max-width: 1119px) {
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 469px) {
+    padding: 0 24px;
+    border: 1px solid var(--lt-color-gray-300);
+  }
+}
+
+.tabs {
+  @include tabs;
+
+  li {
+    width: 100%;
+    text-align: center;
+  }
+}

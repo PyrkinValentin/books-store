@@ -1,3 +1,5 @@
+@import "src/styles/mixins/tabs.mixin";
+
 .spinner {
   margin: 120px auto;
 
@@ -43,39 +45,7 @@
 }
 
 .tabs {
-  text-transform: none;
-
-  &__active {
-    color: var(--lt-color-gray-700) !important;
-    border-bottom: 1px solid var(--lt-color-gray-700);
-  }
-
-  &__list {
-    display: flex;
-    align-items: center;
-
-    border-bottom: 1px solid var(--lt-color-gray-300);
-    overflow: auto;
-
-    &::-webkit-scrollbar {
-      width: 0;
-      height: 0;
-    }
-
-    li {
-      padding: 32px;
-
-      font-weight: 600;
-      color: var(--lt-color-gray-500);
-
-      cursor: pointer;
-      user-select: none;
-    }
-  }
-
-  &__panel {
-    margin-top: 32px;
-  }
+  @include tabs
 }
 
 .favoriteAction {
