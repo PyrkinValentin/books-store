@@ -4,14 +4,19 @@ import Icon from "../icon/Icon"
 import {InputProps} from "./types/InputTypes"
 
 import styles from "./styles/Input.module.scss"
+import classNames from "../../helpers/classNames";
 
 const Input: FC<InputProps> = (props) => {
 	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-		props.onChange(e.target.value)
+		if (typeof props.onChange === 'function') {
+			props.onChange(e.target.value)
+		}
 	}
 
 	const handleClear = () => {
-		props.onChange('')
+		if (typeof props.onChange === 'function') {
+			props.onChange('')
+		}
 	}
 
 	return (
@@ -20,7 +25,7 @@ const Input: FC<InputProps> = (props) => {
 				<span className={styles.title}>{props.label}</span>
 			}
 
-			<span className={styles.input}>
+			<span className={classNames(styles.input, props.className)}>
 				<input
 					type={props.type}
 					name={props.name}

@@ -1,5 +1,4 @@
 import {FormEvent, useState, MouseEvent, useEffect} from "react"
-import {useNavigate} from "react-router-dom"
 
 import useSession from "../../hooks/useSession"
 import useAppDispatch from "../../hooks/useAppDispatch"
@@ -13,7 +12,6 @@ import {editUser} from "../../store/slices/dbSlice"
 import styles from "./styles/Account.module.scss"
 
 const Account = () => {
-	const navigate = useNavigate()
 	const dispatch = useAppDispatch()
 	const {id} = useSession()
 
@@ -24,29 +22,23 @@ const Account = () => {
 
 	const [username, setUsername] = useState(user?.username ?? '')
 	const [email, setEmail] = useState(user?.email ?? '')
-	const [password, setPassword] = useState(user?.password ?? '')
 
 	const [newPassword, setNewPassword] = useState('')
 	const [confirmNewPassword, setConfirmNewPassword] = useState('')
 
 	useEffect(() => {
 		setWarning('')
-	}, [username, email, password, newPassword, confirmNewPassword])
+	}, [username, email, newPassword, confirmNewPassword])
 
 	const handleFormSubmit = (e: FormEvent) => {
 		e.preventDefault()
-
-		if (newPassword !== confirmNewPassword) {
-			setWarning('Passwords must be the same')
-			return
-		}
 
 		dispatch(
 			editUser({
 				id,
 				username,
 				email,
-				password: newPassword || password,
+				password: newPassword || (user?.password ?? ''),
 			})
 		)
 
@@ -55,7 +47,11 @@ const Account = () => {
 
 	const handleCancelClick = (e: MouseEvent) => {
 		e.preventDefault()
-		navigate(-1)
+
+		setUsername(user?.username ?? '')
+		setEmail(user?.email ?? '')
+		setNewPassword('')
+		setConfirmNewPassword('')
 	}
 
 	return (
@@ -93,10 +89,9 @@ const Account = () => {
 					<Input
 						type={'password'}
 						placeholder={'Your password'}
-						value={password}
+						value={user?.password ?? ''}
 						autoCorrect={'off'}
 						label={'Password'}
-						onChange={setPassword}
 						readOnly={true}
 					/>
 				</div>
@@ -118,6 +113,7 @@ const Account = () => {
 						autoCorrect={'off'}
 						label={'Confirm new password'}
 						onChange={setConfirmNewPassword}
+						className={newPassword !== confirmNewPassword ? styles.noEqual : undefined}
 					/>
 				</div>
 
@@ -126,7 +122,8 @@ const Account = () => {
 						<Button
 							disabled={
 								!Boolean(username) ||
-								!Boolean(email)
+								!Boolean(email) ||
+								newPassword !== confirmNewPassword
 							}
 						>
 							Save changes

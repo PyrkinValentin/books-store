@@ -7,9 +7,10 @@ type InputProps = {
 	placeholder?: string
 	autoCorrect?: string
 	label?: string
-	onChange: (value: string) => void
+	onChange?: (value: string) => void
 	onKeyDown?: (e: KeyboardEvent) => void
 	readOnly?: boolean
+	className?: string
 }
 
 export type {
