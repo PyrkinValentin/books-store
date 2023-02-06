@@ -15,7 +15,7 @@ const Input: FC<InputProps> = (props) => {
 	}
 
 	return (
-		<label>
+		<label className={styles.label}>
 			{Boolean(props.label) &&
 				<span className={styles.title}>{props.label}</span>
 			}
@@ -29,9 +29,10 @@ const Input: FC<InputProps> = (props) => {
 					autoCorrect={props.autoCorrect}
 					onChange={handleChange}
 					onKeyDown={props.onKeyDown}
+					readOnly={props.readOnly}
 				/>
 
-				{Boolean(props.value.length) &&
+				{Boolean(props.value.length) && !props.readOnly &&
 					<div className={styles.clear} onClick={handleClear}>
 						<Icon name={'x'}/>
 					</div>

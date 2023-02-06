@@ -1,5 +1,7 @@
+import {IDbUser} from "../../../../../store/slices/types/dbSliceTypes"
+
 type TypingPasswordProps = {
-	userId: string
+	user: IDbUser
 }
 
 export type {

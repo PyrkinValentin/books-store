@@ -8,7 +8,7 @@ import Button from "../../../../ui/button/Button"
 import {TypingEmailProps} from "./types/TypingEmailTypes"
 import styles from "./styles/TypingEmail.module.scss"
 
-const TypingEmail: FC<TypingEmailProps> = ({onChangeUserId}) => {
+const TypingEmail: FC<TypingEmailProps> = ({onChangeUser}) => {
 	const [warning, setWarning] = useState('')
 	const [email, setEmail] = useState('')
 
@@ -30,7 +30,7 @@ const TypingEmail: FC<TypingEmailProps> = ({onChangeUserId}) => {
 			return
 		}
 
-		onChangeUserId(user.id)
+		onChangeUser(user)
 	}
 
 	return (

@@ -1,7 +1,8 @@
 interface IUser {
-	loggedIn?: boolean
+	id: string
 	username: string
 	email: string
+	loggedIn: boolean
 }
 
 export type {

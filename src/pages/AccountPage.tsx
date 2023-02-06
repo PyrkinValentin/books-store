@@ -1,3 +1,5 @@
+import useProtectRouteAuth from "../hooks/useProtectRouteAuth"
+
 import Layout from "../components/layout/Layout"
 import Header from "../modules/header/Header"
 import LayoutSection from "../components/layoutSection/LayoutSection"
@@ -7,6 +9,8 @@ import Account from "../modules/account/Account"
 import Footer from "../modules/footer/Footer"
 
 const AccountPage = () => {
+	useProtectRouteAuth(true)
+	
 	return (
 		<Layout>
 			<Header/>

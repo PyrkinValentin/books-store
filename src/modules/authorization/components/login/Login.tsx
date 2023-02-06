@@ -58,9 +58,10 @@ const Login = () => {
 
 		dispatch(
 			setUser({
-				loggedIn: true,
-				email: user.email,
+				id: user.id,
 				username: user.username,
+				email: user.email,
+				loggedIn: true,
 			})
 		)
 	}

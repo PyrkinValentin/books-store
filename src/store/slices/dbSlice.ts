@@ -2,7 +2,7 @@ import {createSlice, PayloadAction} from "@reduxjs/toolkit"
 
 import createToken from "../../helpers/createToken"
 
-import {IDbNewUser, IDbSliceInitialState, IEditPasswordPayload} from "./types/dbSliceTypes"
+import {IDbSliceInitialState, IDbUser, INewUser} from "./types/dbSliceTypes"
 
 const initialState: IDbSliceInitialState = {
 	users: [],
@@ -12,18 +12,16 @@ const dbSlice = createSlice({
 	name: 'db',
 	initialState,
 	reducers: {
-		addUser: (state: IDbSliceInitialState, action: PayloadAction<IDbNewUser>) => {
-			const id = createToken()
-
+		addUser: (state: IDbSliceInitialState, action: PayloadAction<INewUser>) => {
 			state.users = [
 				...state.users,
-				{id, ...action.payload}
+				{id: createToken(), ...action.payload}
 			]
 		},
-		editPassword: (state: IDbSliceInitialState, action: PayloadAction<IEditPasswordPayload>) => {
+		editUser: (state: IDbSliceInitialState, action: PayloadAction<IDbUser>) => {
 			state.users = state.users.map((user) =>
 				user.id === action.payload.id
-					? {...user, password: action.payload.password}
+					? action.payload
 					: user
 			)
 		},
@@ -31,4 +29,4 @@ const dbSlice = createSlice({
 })
 
 export default dbSlice.reducer
-export const {addUser, editPassword} = dbSlice.actions
+export const {addUser, editUser} = dbSlice.actions

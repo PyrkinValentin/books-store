@@ -1,7 +1,8 @@
 import {Dispatch, SetStateAction} from "react"
+import {IDbUser} from "../../../../../store/slices/types/dbSliceTypes"
 
 type TypingEmailProps = {
-	onChangeUserId: Dispatch<SetStateAction<string>>
+	onChangeUser: Dispatch<SetStateAction<IDbUser>>
 }
 
 export type {

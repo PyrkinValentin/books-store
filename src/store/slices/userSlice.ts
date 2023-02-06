@@ -2,9 +2,10 @@ import {createSlice, PayloadAction} from "@reduxjs/toolkit"
 import {IUser} from "../../types/userTypes"
 
 const initialState: IUser = {
-	loggedIn: false,
+	id: '',
 	username: '',
 	email: '',
+	loggedIn: false,
 }
 
 const userSlice = createSlice({
@@ -12,12 +13,16 @@ const userSlice = createSlice({
 	initialState,
 	reducers: {
 		setUser: (state: IUser, action: PayloadAction<IUser>) => {
-			return action.payload
+			return {
+				...state,
+				...action.payload
+			}
 		},
 		logout: (state: IUser) => {
+			state.id = ''
+			state.username = ''
 			state.email = ''
 			state.loggedIn = false
-			state.username = ''
 		},
 	},
 })

@@ -1,26 +1,19 @@
-import {IUser} from "../../../types/userTypes"
-
-interface IDbUser extends IUser {
-	id: string
+interface INewUser {
+	username: string
+	email: string
 	password: string
 }
 
-interface IDbNewUser extends IUser {
-	password: string
+interface IDbUser extends INewUser {
+	id: string
 }
 
 interface IDbSliceInitialState {
 	users: IDbUser[]
 }
 
-interface IEditPasswordPayload {
-	id: string
-	password: string
-}
-
 export type {
+	INewUser,
 	IDbUser,
-	IDbNewUser,
 	IDbSliceInitialState,
-	IEditPasswordPayload,
 }

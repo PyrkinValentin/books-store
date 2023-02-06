@@ -1,0 +1,41 @@
+.title {
+  font-size: 1.6rem;
+  margin-top: 48px;
+}
+
+.container {
+  margin-top: 16px;
+  width: 100%;
+
+  @media screen and (min-width: 769px) {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+}
+
+.group {
+  margin-top: 72px;
+  padding-top: 48px;
+
+  border-top: 1px solid var(--lt-color-gray-300);
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
+
+    @media screen and (min-width: 769px) {
+      margin-left: auto;
+      max-width: 532px;
+    }
+
+    &_cancel__button {
+      border: 1px solid var(--lt-color-gray-300);
+    }
+  }
+}

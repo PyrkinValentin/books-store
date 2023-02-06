@@ -7,12 +7,12 @@ import Warning from "../../../../components/warning/Warning"
 import Input from "../../../../ui/input/Input"
 import Button from "../../../../ui/button/Button"
 
-import {editPassword} from "../../../../store/slices/dbSlice"
+import {editUser} from "../../../../store/slices/dbSlice"
 
 import {TypingPasswordProps} from "./types/TypingNewPasswordTypes"
 import styles from "./styles/TypingNewPassword.module.scss"
 
-const TypingNewPassword: FC<TypingPasswordProps> = ({userId}) => {
+const TypingNewPassword: FC<TypingPasswordProps> = ({user}) => {
 	const dispatch = useAppDispatch()
 	const navigate = useNavigate()
 
@@ -33,8 +33,8 @@ const TypingNewPassword: FC<TypingPasswordProps> = ({userId}) => {
 		}
 
 		dispatch(
-			editPassword({
-				id: userId,
+			editUser({
+				...user,
 				password
 			})
 		)
