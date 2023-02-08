@@ -65,6 +65,7 @@ const SearchForm = () => {
 
 				{Boolean(input.length) ? (
 					<button
+						type={'button'}
 						className={styles.form__label_icon}
 						onClick={handleInputClear}
 					>

@@ -38,9 +38,9 @@ const Input: FC<InputProps> = (props) => {
 				/>
 
 				{Boolean(props.value.length) && !props.readOnly &&
-					<div className={styles.clear} onClick={handleClear}>
+					<button type={'button'} className={styles.clear} onClick={handleClear}>
 						<Icon name={'x'}/>
-					</div>
+					</button>
 				}
 			</span>
 		</label>
